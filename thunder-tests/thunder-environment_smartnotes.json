@@ -1,0 +1,21 @@
+{
+  "clientName": "Thunder Client",
+  "environmentName": "Smart Notes Local",
+  "environmentId": "smart-notes-local-env",
+  "dateExported": "2026-09-17T06:00:00.000Z",
+  "version": "1.1",
+  "variables": [
+    {
+      "name": "baseUrl",
+      "value": "http://localhost:8000"
+    },
+    {
+      "name": "noteId",
+      "value": ""
+    },
+    {
+      "name": "cardId",
+      "value": ""
+    }
+  ]
+}

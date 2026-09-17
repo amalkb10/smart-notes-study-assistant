@@ -1,0 +1,309 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "AI Smart Notes & Study Assistant API",
+  "collectionId": "smart-notes-api-collection",
+  "dateExported": "2026-09-17T06:00:00.000Z",
+  "version": "1.1",
+  "folders": [
+    {
+      "_id": "folder_health",
+      "name": "0. Health & System",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 10000
+    },
+    {
+      "_id": "folder_notes",
+      "name": "1. Notes Management",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 20000
+    },
+    {
+      "_id": "folder_ai",
+      "name": "2. AI Study Tools",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 30000
+    },
+    {
+      "_id": "folder_flashcards",
+      "name": "3. Flashcards",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 40000
+    },
+    {
+      "_id": "folder_quiz",
+      "name": "4. Quiz Arena",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 50000
+    },
+    {
+      "_id": "folder_tutor",
+      "name": "5. AI Study Tutor Chat",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 60000
+    },
+    {
+      "_id": "folder_stats",
+      "name": "6. Analytics & Upload",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 70000
+    }
+  ],
+  "requests": [
+    {
+      "_id": "req_health",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_health",
+      "name": "Health Check & DB Status",
+      "url": "{{baseUrl}}/api/health",
+      "method": "GET",
+      "sortNum": 10100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "modified": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    },
+    {
+      "_id": "req_list_notes",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_notes",
+      "name": "List All Notes",
+      "url": "{{baseUrl}}/api/notes",
+      "method": "GET",
+      "sortNum": 20100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    },
+    {
+      "_id": "req_search_notes",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_notes",
+      "name": "Search Notes by Keyword & Subject",
+      "url": "{{baseUrl}}/api/notes?search=learning&subject=Computer Science",
+      "method": "GET",
+      "sortNum": 20200,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    },
+    {
+      "_id": "req_create_note",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_notes",
+      "name": "Create New Note",
+      "url": "{{baseUrl}}/api/notes",
+      "method": "POST",
+      "sortNum": 20300,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"Quantum Computing Principles\",\n  \"subject\": \"Physics & CS\",\n  \"tags\": [\"Quantum\", \"Qubits\", \"Superposition\"],\n  \"content\": \"# Quantum Computing\\nQuantum computing leverages principles of quantum mechanics like superposition and entanglement.\\n\\n## Qubits\\nUnlike classical bits that are 0 or 1, a qubit exists in a linear combination: |psi> = alpha|0> + beta|1>.\",\n  \"is_pinned\": true\n}"
+      }
+    },
+    {
+      "_id": "req_get_note",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_notes",
+      "name": "Get Single Note by ID",
+      "url": "{{baseUrl}}/api/notes/{{noteId}}",
+      "method": "GET",
+      "sortNum": 20400,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    },
+    {
+      "_id": "req_update_note",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_notes",
+      "name": "Update Note",
+      "url": "{{baseUrl}}/api/notes/{{noteId}}",
+      "method": "PUT",
+      "sortNum": 20500,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"Quantum Computing Principles (Updated)\",\n  \"is_pinned\": true\n}"
+      }
+    },
+    {
+      "_id": "req_delete_note",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_notes",
+      "name": "Delete Note",
+      "url": "{{baseUrl}}/api/notes/{{noteId}}",
+      "method": "DELETE",
+      "sortNum": 20600,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    },
+    {
+      "_id": "req_summarize",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_ai",
+      "name": "AI Summarize Note & Extract Key Takeaways",
+      "url": "{{baseUrl}}/api/ai/summarize",
+      "method": "POST",
+      "sortNum": 30100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"note_id\": \"{{noteId}}\",\n  \"content\": \"# React State Management\\nReact uses state hooks like useState and useReducer for localized component data. For global shared state, developers utilize Context API or state libraries like Redux or Zustand.\\n\\nKey Rules:\\n- Never mutate state directly.\\n- State updates may be batched for performance.\",\n  \"save_to_note\": true\n}"
+      }
+    },
+    {
+      "_id": "req_gen_flashcards",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_flashcards",
+      "name": "Generate Flashcards Deck",
+      "url": "{{baseUrl}}/api/ai/flashcards",
+      "method": "POST",
+      "sortNum": 40100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"note_id\": \"{{noteId}}\",\n  \"content\": \"Supervised Learning: Uses labeled datasets.\\nUnsupervised Learning: Discovers patterns in unlabeled data.\\nReinforcement Learning: Agent learns via environment rewards.\",\n  \"count\": 5\n}"
+      }
+    },
+    {
+      "_id": "req_get_flashcards",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_flashcards",
+      "name": "Get All Flashcards",
+      "url": "{{baseUrl}}/api/flashcards",
+      "method": "GET",
+      "sortNum": 40200,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    },
+    {
+      "_id": "req_review_flashcard",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_flashcards",
+      "name": "Update Flashcard Mastery Status",
+      "url": "{{baseUrl}}/api/flashcards/{{cardId}}/review",
+      "method": "PUT",
+      "sortNum": 40300,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"mastered\": true\n}"
+      }
+    },
+    {
+      "_id": "req_gen_quiz",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_quiz",
+      "name": "Generate Practice Quiz Questions",
+      "url": "{{baseUrl}}/api/ai/quiz",
+      "method": "POST",
+      "sortNum": 50100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"note_id\": \"{{noteId}}\",\n  \"content\": \"Binary Search Trees average O(log n) time complexity. Depth-First Search uses a stack, while Breadth-First Search uses a queue.\",\n  \"num_questions\": 3,\n  \"difficulty\": \"medium\"\n}"
+      }
+    },
+    {
+      "_id": "req_submit_quiz",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_quiz",
+      "name": "Submit Quiz Answers & Get Score",
+      "url": "{{baseUrl}}/api/ai/quiz/submit",
+      "method": "POST",
+      "sortNum": 50200,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"note_id\": \"{{noteId}}\",\n  \"answers\": [\n    {\"question_index\": 0, \"selected_option\": \"A\"}\n  ],\n  \"questions\": [\n    {\n      \"question\": \"What data structure does BFS use?\",\n      \"options\": [\n        {\"id\": \"A\", \"text\": \"Queue\"},\n        {\"id\": \"B\", \"text\": \"Stack\"}\n      ],\n      \"correct_option\": \"A\",\n      \"explanation\": \"Breadth-first search processes nodes level-by-level using a FIFO queue.\"\n    }\n  ]\n}"
+      }
+    },
+    {
+      "_id": "req_ask_tutor",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_tutor",
+      "name": "Ask AI Study Tutor",
+      "url": "{{baseUrl}}/api/chat",
+      "method": "POST",
+      "sortNum": 60100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"note_id\": \"{{noteId}}\",\n  \"message\": \"Can you give me a funny real-world analogy to remember Breadth-First Search vs Depth-First Search?\"\n}"
+      }
+    },
+    {
+      "_id": "req_tutor_history",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_tutor",
+      "name": "Get Tutor Chat History",
+      "url": "{{baseUrl}}/api/chat/history?note_id={{noteId}}",
+      "method": "GET",
+      "sortNum": 60200,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    },
+    {
+      "_id": "req_stats",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_stats",
+      "name": "Get Study Stats & Analytics",
+      "url": "{{baseUrl}}/api/stats",
+      "method": "GET",
+      "sortNum": 70100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    }
+  ]
+}

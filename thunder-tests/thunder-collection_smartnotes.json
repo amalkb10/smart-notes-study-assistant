@@ -1,0 +1,205 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "AI Smart Notes & Study Assistant API",
+  "collectionId": "smart-notes-api-collection",
+  "dateExported": "2026-09-17T06:00:00.000Z",
+  "version": "1.1",
+  "folders": [
+    {
+      "_id": "folder_health",
+      "name": "0. Health & System",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 10000
+    },
+    {
+      "_id": "folder_notes",
+      "name": "1. Notes Management",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 20000
+    },
+    {
+      "_id": "folder_ai",
+      "name": "2. AI Study Tools",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 30000
+    },
+    {
+      "_id": "folder_flashcards",
+      "name": "3. Flashcards",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 40000
+    },
+    {
+      "_id": "folder_quiz",
+      "name": "4. Quiz Arena",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 50000
+    },
+    {
+      "_id": "folder_tutor",
+      "name": "5. AI Study Tutor Chat",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 60000
+    },
+    {
+      "_id": "folder_stats",
+      "name": "6. Analytics & Upload",
+      "containerId": "",
+      "created": "2026-09-17T06:00:00.000Z",
+      "sortNum": 70000
+    }
+  ],
+  "requests": [
+    {
+      "_id": "req_health",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_health",
+      "name": "Health Check & DB Status",
+      "url": "{{baseUrl}}/api/health",
+      "method": "GET",
+      "sortNum": 10100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "modified": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    },
+    {
+      "_id": "req_list_notes",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_notes",
+      "name": "List All Notes",
+      "url": "{{baseUrl}}/api/notes",
+      "method": "GET",
+      "sortNum": 20100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    },
+    {
+      "_id": "req_search_notes",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_notes",
+      "name": "Search Notes by Keyword & Subject",
+      "url": "{{baseUrl}}/api/notes?search=learning&subject=Computer Science",
+      "method": "GET",
+      "sortNum": 20200,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    },
+    {
+      "_id": "req_create_note",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_notes",
+      "name": "Create New Note",
+      "url": "{{baseUrl}}/api/notes",
+      "method": "POST",
+      "sortNum": 20300,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"title\": \"Quantum Superposition & Qubits\",\n  \"subject\": \"Physics\",\n  \"content\": \"# Quantum Superposition\\n\\nIn quantum computing, a qubit can exist in a superposition of states |0⟩ and |1⟩.\\n\\nKey Properties:\\n- Linearity of quantum mechanics\\n- Measurement collapses the state\n- Entanglement creates correlated pairs\",\n  \"tags\": [\"physics\", \"quantum\", \"computing\"]\n}"
+      }
+    },
+    {
+      "_id": "req_ai_summarize",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_ai",
+      "name": "AI Summarize & Takeaways",
+      "url": "{{baseUrl}}/api/ai/summarize",
+      "method": "POST",
+      "sortNum": 30100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"content\": \"Machine learning algorithms build a mathematical model based on training data to make predictions or decisions. Supervised learning algorithms build a model of a set of data that contains both the inputs and the desired outputs. Unsupervised learning algorithms take a set of data that contains only inputs and find structure in the data, like grouping or clustering of data points.\"\n}"
+      }
+    },
+    {
+      "_id": "req_ai_flashcards",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_flashcards",
+      "name": "AI Generate Flashcards",
+      "url": "{{baseUrl}}/api/ai/flashcards",
+      "method": "POST",
+      "sortNum": 40100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"content\": \"Gradient Descent is an optimization algorithm used to minimize cost function J(w). Learning rate alpha controls step size. Too large alpha leads to divergence. Too small alpha leads to slow convergence.\",\n  \"count\": 3\n}"
+      }
+    },
+    {
+      "_id": "req_ai_quiz",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_quiz",
+      "name": "AI Generate Practice Quiz",
+      "url": "{{baseUrl}}/api/ai/quiz",
+      "method": "POST",
+      "sortNum": 50100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"content\": \"Breadth-First Search (BFS) explores neighbor nodes first using a FIFO Queue. Time complexity is O(V+E). Depth-First Search (DFS) explores as deep as possible along each branch before backtracking using a LIFO Stack or recursion.\",\n  \"num_questions\": 3\n}"
+      }
+    },
+    {
+      "_id": "req_ai_chat",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_tutor",
+      "name": "AI Study Tutor Chat",
+      "url": "{{baseUrl}}/api/chat",
+      "method": "POST",
+      "sortNum": 60100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"message\": \"Give me a quick mnemonic or memory trick to remember the difference between BFS and DFS queue vs stack behavior.\"\n}"
+      }
+    },
+    {
+      "_id": "req_stats",
+      "colId": "smart-notes-api-collection",
+      "containerId": "folder_stats",
+      "name": "Get Learning Analytics",
+      "url": "{{baseUrl}}/api/stats",
+      "method": "GET",
+      "sortNum": 70100,
+      "created": "2026-09-17T06:00:00.000Z",
+      "headers": []
+    }
+  ]
+}

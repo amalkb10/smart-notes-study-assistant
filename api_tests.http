@@ -1,0 +1,53 @@
+### Health Check
+GET http://localhost:8000/api/health
+
+### List Notes
+GET http://localhost:8000/api/notes
+
+### Create Note
+POST http://localhost:8000/api/notes
+Content-Type: application/json
+
+{
+  "title": "Quantum Superposition & Qubits",
+  "subject": "Physics",
+  "content": "# Quantum Superposition\n\nIn quantum computing, a qubit can exist in a superposition of states |0⟩ and |1⟩.\n\nKey Properties:\n- Linearity of quantum mechanics\n- Measurement collapses the state\n- Entanglement creates correlated pairs",
+  "tags": ["physics", "quantum", "computing"]
+}
+
+### AI Summarize
+POST http://localhost:8000/api/ai/summarize
+Content-Type: application/json
+
+{
+  "content": "Machine learning algorithms build a mathematical model based on training data to make predictions or decisions. Supervised learning algorithms build a model of a set of data that contains both the inputs and the desired outputs. Unsupervised learning algorithms take a set of data that contains only inputs and find structure in the data, like grouping or clustering of data points."
+}
+
+### AI Flashcards
+POST http://localhost:8000/api/ai/flashcards
+Content-Type: application/json
+
+{
+  "content": "Gradient Descent is an optimization algorithm used to minimize cost function J(w). Learning rate alpha controls step size. Too large alpha leads to divergence. Too small alpha leads to slow convergence.",
+  "count": 3
+}
+
+### AI Quiz
+POST http://localhost:8000/api/ai/quiz
+Content-Type: application/json
+
+{
+  "content": "Breadth-First Search (BFS) explores neighbor nodes first using a FIFO Queue. Time complexity is O(V+E). Depth-First Search (DFS) explores as deep as possible along each branch before backtracking using a LIFO Stack or recursion.",
+  "num_questions": 3
+}
+
+### AI Study Tutor Chat
+POST http://localhost:8000/api/chat
+Content-Type: application/json
+
+{
+  "message": "Give me a quick mnemonic or memory trick to remember the difference between BFS and DFS queue vs stack behavior."
+}
+
+### Get Stats
+GET http://localhost:8000/api/stats
